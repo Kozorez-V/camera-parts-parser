@@ -2,7 +2,10 @@ import requests
 import logging
 import ua_generator
 
-logging.basicConfig(filename="error.log", level=logging.ERROR)
+logging.basicConfig(filename="logs.log",
+                    level=logging.INFO,
+                    filemode="w",
+                    format="[%(asctime)s] [%(levelname)s] [%(message)s]")
 
 user_agent = ua_generator.generate()
 
