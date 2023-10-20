@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "camera-parts-parser"
+version = "0.1.0"
+description = ""
+authors = ["Kozorez-V <kozorezviktoria@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+beautifulsoup4 = "^4.12.2"
+requests = "^2.31.0"
+ua-generator = "^0.1.9"
+pandas = "^2.1.1"
+openpyxl = "^3.1.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
