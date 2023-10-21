@@ -4,7 +4,7 @@ from modules import call
 from urllib.parse import urljoin
 import pandas as pd
 
-url = "https://in-commerce.ru/zapchasty/dlya-zerkalnyh-fotoapparatov/canon-komplectuyuschie.html?start=0"
+url = "https://in-commerce.ru/za"
 
 while True:
     response = call.response(url)

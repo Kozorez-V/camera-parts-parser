@@ -1,18 +1,24 @@
 import requests
 import logging
+from logging import config
+import logging_config
 import ua_generator
 
-logging.basicConfig(filename="logs.log",
-                    level=logging.INFO,
-                    filemode="w",
-                    format="{asctime} {levelname} {message}",
-                    style='{')
+# logging.basicConfig(filename='logs.log',
+#                     level=logging.INFO,
+#                     filemode='w',
+#                     format='{asctime} {levelname} {message}',
+#                     style='{')
+
+config.dictConfig(logging_config.LOGGING)
+
+logger = logging.getLogger(__name__)
 
 user_agent = ua_generator.generate()
 
 headers = {
-    "Accept": "text/hmtl",
-    "User-Agent": str(user_agent)
+    'Accept': 'text/hmtl',
+    'User-Agent': str(user_agent)
 }
 
 
@@ -23,7 +29,7 @@ def response(url):
         response.raise_for_status()
         return response
     except requests.exceptions.Timeout:
-        logging.error("The request timed out")
+        logger.error('The request timed out')
     except requests.exceptions.RequestException as e:
-        logging.error(f"An error occured: {e}")
+        logger.error(f'An error occured: {e}')
         exit()
