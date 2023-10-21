@@ -5,7 +5,8 @@ import ua_generator
 logging.basicConfig(filename="logs.log",
                     level=logging.INFO,
                     filemode="w",
-                    format="[%(asctime)s] [%(levelname)s] [%(message)s]")
+                    format="{asctime} {levelname} {message}",
+                    style='{')
 
 user_agent = ua_generator.generate()
 
