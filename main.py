@@ -3,8 +3,9 @@ from modules import converter
 from modules import call
 from urllib.parse import urljoin
 import pandas as pd
+import os
 
-url = "https://in-commerce.ru/za"
+url = "https://in-commerce.ru/zapchasty/dlya-zerkalnyh-fotoapparatov/canon-komplectuyuschie.html"
 
 while True:
     response = call.response(url)
@@ -20,6 +21,8 @@ while True:
     if next_page_url:
         url = urljoin(url, next_page_url)
     else:
-        item_data.to_csv('./camera_parts.csv', index=False)
-        item_data.to_excel('./camera_parts.xlsx', index=False)
+        if not os.path.isdir('./export'):
+            os.makedirs('./export')
+        item_data.to_csv('./export/camera_parts.csv', index=False)
+        item_data.to_excel('./export/camera_parts.xlsx', index=False)
         break
