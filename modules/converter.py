@@ -17,7 +17,7 @@ def get_item_data(item_list):
             stock = item.find("span", class_=re.compile("stock")).text
             item_data.loc[len(item_data.index)] = [product_name, price, stock]
         except AttributeError:
-            print("Ошибка")
+            print("No data found")
             exit()
 
     return item_data
