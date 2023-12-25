@@ -1,0 +1,1 @@
+A project to practice parsing. The data is parsed using BeautifulSoup. The collected data is tabulated using the DataFrame from Pandas, and is also exported to csv and/or xlsx.
